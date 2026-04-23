@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Günün Mübarək, Fatimə!</title>
+    <style>
+        /* =========================================
+           1. ƏSAS STRUKTUR VƏ FON DİZAYNI
+           ========================================= */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden; /* Şarların kənara çıxmasının qarşısını alır */
+            position: relative;
+        }
+
+        /* =========================================
+           2. MƏRKƏZİ KART DİZAYNI
+           ========================================= */
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 10; /* Şarlardan öndə durması üçün */
+            backdrop-filter: blur(10px);
+            animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        h1 {
+            color: #ff6b6b;
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .name-highlight {
+            color: #a18cd1;
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cake {
+            font-size: 6rem;
+            display: inline-block;
+            animation: bounce 2s infinite ease-in-out;
+        }
+
+        /* =========================================
+           3. CSS ŞARLAR (HTML elementləri ilə rəsm)
+           ========================================= */
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 50px;
+            background: #ff9a9e;
+            border-radius: 50%;
+            bottom: -100px;
+            opacity: 0.8;
+        }
+
+        /* Şarın altındakı üçbucaq hissə */
+        .balloon::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 15px;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 10px solid #ff9a9e;
+        }
+
+        /* Şarın ipi */
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 19px;
+            width: 2px;
+            height: 45px;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Fərqli rənglər və hərəkət gecikmələri (Modulyarlıq) */
+        .b1 { left: 10%; animation: floatUp 7s infinite ease-in 0s; background: #a18cd1; }
+        .b1::before { border-bottom-color: #a18cd1; }
+        
+        .b2 { left: 30%; animation: floatUp 6s infinite ease-in 2s; background: #fad0c4; }
+        .b2::before { border-bottom-color: #fad0c4; }
+        
+        .b3 { left: 50%; animation: floatUp 8s infinite ease-in 4s; background: #ffecd2; }
+        .b3::before { border-bottom-color: #ffecd2; }
+        
+        .b4 { left: 70%; animation: floatUp 5s infinite ease-in 1s; background: #fbc2eb; }
+        .b4::before { border-bottom-color: #fbc2eb; }
+        
+        .b5 { left: 85%; animation: floatUp 7s infinite ease-in 3s; background: #84fab0; }
+        .b5::before { border-bottom-color: #84fab0; }
+
+        /* =========================================
+           4. KEYFRAME ANİMASİYALARI
+           ========================================= */
+        /* Kartın səhifə açılanda böyüyərək gəlməsi */
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Tortun yuxarı-aşağı zərif hərəkəti */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        /* Şarların aşağıdan yuxarıya süzülməsi */
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(-5deg); opacity: 1; }
+            50% { transform: translateY(-50vh) rotate(5deg); }
+            100% { transform: translateY(-120vh) rotate(-5deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+    <div class="balloon b5"></div>
+
+    <div class="card">
+        <h1>Ad Günün Mübarək!</h1>
+        <h2 class="name-highlight">əziz Fatimə</h2>
+        <p class="subtitle">
+            Yeni yaşın sənə uğur gətirsin.<br>
+            Sənə sonsuz xoşbəxtlik, cansağlığı və gözəl günlər arzulayırıq!
+        </p>
+        <div class="cake">🎂</div>
+    </div>
+
+</body>
+</html>
