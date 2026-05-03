@@ -16,26 +16,42 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            /* Arxa plan şəkli bura əlavə olunur */
+            background-image: url('assets/images/teri.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
-            /* Şarların kənara çıxmasının qarşısını alır */
             position: relative;
+        }
+
+        /* Qara Overlay (Təbəqə) */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* 0.5 şəffaflıq dərəcəsidir, istəsəniz artıra bilərsiniz */
+            z-index: 1;
         }
 
         /* =========================================
            2. MƏRKƏZİ KART DİZAYNI
            ========================================= */
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            /* Kart bir az daha qatı olsun */
             padding: 3rem 4rem;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             text-align: center;
             position: relative;
             z-index: 10;
-            /* Şarlardan öndə durması üçün */
-            backdrop-filter: blur(10px);
+            /* Overlay-dən öndə durur */
+            backdrop-filter: blur(2px);
             animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
@@ -54,7 +70,14 @@
         }
 
         .subtitle {
-            color: #666;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .ps {
+            color: #fff;
             font-size: 1.2rem;
             margin-bottom: 30px;
             line-height: 1.6;
@@ -77,6 +100,7 @@
             border-radius: 50%;
             bottom: -100px;
             opacity: 0.8;
+            z-index: 5;
         }
 
         /* Şarın altındakı üçbucaq hissə */
@@ -216,7 +240,7 @@
             Sənə sonsuz xoşbəxtlik, cansağlığı və gözəl günlər arzulayıram!
         </p>
         <div class="cake">🎂</div>
-        <p>P.S: Ad günün olsa da bu gerçək dəyişmir: Sən tam bir gerizəkalısan! :D</p>
+        <p class="ps">P.S: Ad günün olsa da bu gerçək dəyişmir: Sən tam bir gerizəkalısan! :D</p>
     </div>
 
 </body>
