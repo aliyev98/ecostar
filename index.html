@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="az">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,8 @@
             align-items: center;
             background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden; /* Şarların kənara çıxmasının qarşısını alır */
+            overflow: hidden;
+            /* Şarların kənara çıxmasının qarşısını alır */
             position: relative;
         }
 
@@ -31,7 +33,8 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             text-align: center;
             position: relative;
-            z-index: 10; /* Şarlardan öndə durması üçün */
+            z-index: 10;
+            /* Şarlardan öndə durması üçün */
             backdrop-filter: blur(10px);
             animation: popIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
@@ -99,44 +102,104 @@
         }
 
         /* Fərqli rənglər və hərəkət gecikmələri (Modulyarlıq) */
-        .b1 { left: 10%; animation: floatUp 7s infinite ease-in 0s; background: #a18cd1; }
-        .b1::before { border-bottom-color: #a18cd1; }
-        
-        .b2 { left: 30%; animation: floatUp 6s infinite ease-in 2s; background: #fad0c4; }
-        .b2::before { border-bottom-color: #fad0c4; }
-        
-        .b3 { left: 50%; animation: floatUp 8s infinite ease-in 4s; background: #ffecd2; }
-        .b3::before { border-bottom-color: #ffecd2; }
-        
-        .b4 { left: 70%; animation: floatUp 5s infinite ease-in 1s; background: #fbc2eb; }
-        .b4::before { border-bottom-color: #fbc2eb; }
-        
-        .b5 { left: 85%; animation: floatUp 7s infinite ease-in 3s; background: #84fab0; }
-        .b5::before { border-bottom-color: #84fab0; }
+        .b1 {
+            left: 10%;
+            animation: floatUp 7s infinite ease-in 0s;
+            background: #a18cd1;
+        }
+
+        .b1::before {
+            border-bottom-color: #a18cd1;
+        }
+
+        .b2 {
+            left: 30%;
+            animation: floatUp 6s infinite ease-in 2s;
+            background: #fad0c4;
+        }
+
+        .b2::before {
+            border-bottom-color: #fad0c4;
+        }
+
+        .b3 {
+            left: 50%;
+            animation: floatUp 8s infinite ease-in 4s;
+            background: #ffecd2;
+        }
+
+        .b3::before {
+            border-bottom-color: #ffecd2;
+        }
+
+        .b4 {
+            left: 70%;
+            animation: floatUp 5s infinite ease-in 1s;
+            background: #fbc2eb;
+        }
+
+        .b4::before {
+            border-bottom-color: #fbc2eb;
+        }
+
+        .b5 {
+            left: 85%;
+            animation: floatUp 7s infinite ease-in 3s;
+            background: #84fab0;
+        }
+
+        .b5::before {
+            border-bottom-color: #84fab0;
+        }
 
         /* =========================================
            4. KEYFRAME ANİMASİYALARI
            ========================================= */
         /* Kartın səhifə açılanda böyüyərək gəlməsi */
         @keyframes popIn {
-            0% { transform: scale(0.5); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* Tortun yuxarı-aşağı zərif hərəkəti */
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px) scale(1.05); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.05);
+            }
         }
 
         /* Şarların aşağıdan yuxarıya süzülməsi */
         @keyframes floatUp {
-            0% { transform: translateY(0) rotate(-5deg); opacity: 1; }
-            50% { transform: translateY(-50vh) rotate(5deg); }
-            100% { transform: translateY(-120vh) rotate(-5deg); opacity: 0; }
+            0% {
+                transform: translateY(0) rotate(-5deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-50vh) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(-5deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="balloon b1"></div>
@@ -152,9 +215,10 @@
             Yeni yaşın sənə uğur gətirsin.<br>
             Sənə sonsuz xoşbəxtlik, cansağlığı və gözəl günlər arzulayıram!
         </p>
-        <p>P.S: Ad günün olsa da bu gerçək dəyişmir: Sən tam bir gerizəkalısan! :D</p>
         <div class="cake">🎂</div>
+        <p>P.S: Ad günün olsa da bu gerçək dəyişmir: Sən tam bir gerizəkalısan! :D</p>
     </div>
 
 </body>
+
 </html>
